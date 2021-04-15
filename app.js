@@ -4,7 +4,14 @@ const App = Vue.createApp({
           show: true,
           title: 'something',
           name: 'something else',
-          year: 1991
+          year: 1991,
+          books: [
+            {title: 'something', author: 'something author',},
+            {title: 'other', author: 'other author',},
+            {title: 'third', author: 'third author',},
+          ],
+          x: 0,
+          y: 0,
         }
     },
     methods: {
@@ -14,8 +21,12 @@ const App = Vue.createApp({
       toggleShow(){
         this.show = !this.show
       },
-      handleMouseEvent(){
-        console.log('mouse event')
+      handleMouseEvent(e){
+        console.log('event type', e.type)
+      },
+      handleMouseMove(e){
+        this.x = e.offsetX
+        this.y = e.offsetY
       }
     }
 })

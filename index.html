@@ -20,19 +20,30 @@
     <h1>Hello, vue :)</h1>
     <div id="app">
         <div v-if="show">
-            <p>{{title}}</p>
+          
+            <!-- <p>{{title}}</p>
             <p>{{name}}</p>
             <p>{{year}}</p>
             <button v-on:click="addyear">year +</button>
             <button @click="year--">year -</button>
-            <button v-on:click="title = 'new title'">change title</button>
-            <button @click="toggleShow">show/hide</button>
+            <button v-on:click="title = 'new title'">change title</button> -->
+          <ul>
+            <li v-for="book in books">
+              <h3>
+                {{book.title}}
+              </h3>
+              <p>
+                {{book.author}}
+              </p>
+            </li>
+          </ul>
         </div>
+        <button @click="toggleShow">show/hide</button>
 
         <div class="box" @mouseover="handleMouseEvent">mouseover</div>
         <div class="box" @mouseleave="handleMouseEvent">mouseleave</div>
         <div class="box" @dblclick="handleMouseEvent">doubleclick</div>
-        <div class="box"></div>
+        <div class="box" @mousemove="handleMouseMove">X:{{x}} Y:{{y}}</div>
     </div>
     <script src="app.js"></script>
 </body>
