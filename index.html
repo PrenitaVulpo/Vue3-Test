@@ -5,17 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Vue Version</title>
     <script src="https://unpkg.com/vue@3.0.11"></script>
+    <style>
+        .box {
+            padding: 100px 0;
+            width: 400px;
+          text-align: center;
+          background-color: #ddd;
+          margin: 20px;
+          display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <h1>Hello, vue :)</h1>
     <div id="app">
-        <p>{{title}}</p>
-        <p>{{name}}</p>
-        <p>{{year}}</p>
+        <div v-if="show">
+            <p>{{title}}</p>
+            <p>{{name}}</p>
+            <p>{{year}}</p>
+            <button v-on:click="addyear">year +</button>
+            <button @click="year--">year -</button>
+            <button v-on:click="title = 'new title'">change title</button>
+            <button @click="toggleShow">show/hide</button>
+        </div>
+
+        <div class="box" @mouseover="handleMouseEvent">mouseover</div>
+        <div class="box" @mouseleave="handleMouseEvent">mouseleave</div>
+        <div class="box" @dblclick="handleMouseEvent">doubleclick</div>
+        <div class="box"></div>
     </div>
-    <button v-on:click="year++">year +</button>
-    <button @click="year--">year -</button>
-    <button v-on:click="title = 'new title'">change title</button>
     <script src="app.js"></script>
 </body>
 </html>

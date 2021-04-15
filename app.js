@@ -1,10 +1,22 @@
 const App = Vue.createApp({
     data() {
         return {
-            title: 'something',
-            name: 'something else',
-            year: 1991
+          show: true,
+          title: 'something',
+          name: 'something else',
+          year: 1991
         }
+    },
+    methods: {
+      addyear(){
+        this.year++
+      },
+      toggleShow(){
+        this.show = !this.show
+      },
+      handleMouseEvent(){
+        console.log('mouse event')
+      }
     }
 })
 
