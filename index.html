@@ -1,50 +1,74 @@
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Vue Version</title>
-    <script src="https://unpkg.com/vue@3.0.11"></script>
-    <style>
-        .box {
-            padding: 100px 0;
-            width: 400px;
-          text-align: center;
-          background-color: #ddd;
-          margin: 20px;
-          display: inline-block;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Vue Version</title>
+  <script src="https://unpkg.com/vue@3.0.11"></script>
+  <style>
+    .box {
+      padding: 100px 0;
+      width: 400px;
+      text-align: center;
+      background-color: #ddd;
+      margin: 20px;
+      display: inline-block;
+    }
+    body {
+      background: #eee;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    p, h3, ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Hello, vue :)</h1>
-    <div id="app">
-        <div v-if="show">
-          
-            <!-- <p>{{title}}</p>
+  <h1>Hello, vue :)</h1>
+  <div id="app">
+    <a v-bind:href="url">start page search</a>
+    <div v-if="show">
+
+      <!-- <p>{{title}}</p>
             <p>{{name}}</p>
             <p>{{year}}</p>
             <button v-on:click="addyear">year +</button>
             <button @click="year--">year -</button>
             <button v-on:click="title = 'new title'">change title</button> -->
-          <ul>
-            <li v-for="book in books">
-              <h3>
-                {{book.title}}
-              </h3>
-              <p>
-                {{book.author}}
-              </p>
-            </li>
-          </ul>
-        </div>
-        <button @click="toggleShow">show/hide</button>
-
-        <div class="box" @mouseover="handleMouseEvent">mouseover</div>
-        <div class="box" @mouseleave="handleMouseEvent">mouseleave</div>
-        <div class="box" @dblclick="handleMouseEvent">doubleclick</div>
-        <div class="box" @mousemove="handleMouseMove">X:{{x}} Y:{{y}}</div>
     </div>
-    <script src="app.js"></script>
+    <ul>
+      <li v-for="book in books" :class="{fav: book.isFav}">
+        <h3>
+          {{book.title}}
+        </h3>
+        <p>
+          {{book.author}}
+        </p>
+        <img :src="book.cover" :alt="book.title"/>
+      </li>
+    </ul>
+    <button @click="toggleShow">show/hide</button>
+    <br>
+    <div class="box" @mouseover="handleMouseEvent">mouseover</div>
+    <div class="box" @mouseleave="handleMouseEvent">mouseleave</div>
+    <div class="box" @dblclick="handleMouseEvent">doubleclick</div>
+    <div class="box" @mousemove="handleMouseMove">X:{{x}} Y:{{y}}</div>
+  </div>
+  <script src="app.js"></script>
 </body>
+
 </html>

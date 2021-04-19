@@ -2,13 +2,14 @@ const App = Vue.createApp({
     data() {
         return {
           show: true,
+          url: 'https://www.startpage.com',
           title: 'something',
           name: 'something else',
           year: 1991,
           books: [
-            {title: 'something', author: 'something author',},
-            {title: 'other', author: 'other author',},
-            {title: 'third', author: 'third author',},
+            {title: 'something', author: 'something author', cover: '/assets/1.jpg', isFav: false},
+            {title: 'other', author: 'other author', cover: '/assets/2.jpg', isFav: false},
+            {title: 'third', author: 'third author', cover: '/assets/3.jpg', isFav: false},
           ],
           x: 0,
           y: 0,
