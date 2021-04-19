@@ -28,6 +28,10 @@ const App = Vue.createApp({
       handleMouseMove(e){
         this.x = e.offsetX
         this.y = e.offsetY
+      },
+      toggleFav(index){
+        // console.log(index)
+        this.books[index].isFav = !this.books[index].isFav
       }
     }
 })

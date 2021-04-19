@@ -34,6 +34,10 @@
       align-items: center;
       justify-content: space-between;
     }
+    li.fav {
+      background: #ff9ed2;
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -51,7 +55,7 @@
             <button v-on:click="title = 'new title'">change title</button> -->
     </div>
     <ul>
-      <li v-for="book in books" :class="{fav: book.isFav}">
+      <li v-for="(book, index) in books" :class="{fav: book.isFav}" @click="toggleFav(index)">
         <h3>
           {{book.title}}
         </h3>
