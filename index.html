@@ -55,7 +55,7 @@
             <button v-on:click="title = 'new title'">change title</button> -->
     </div>
     <ul>
-      <li v-for="(book, index) in books" :class="{fav: book.isFav}" @click="toggleFav(index)">
+      <li v-for="(book, index) in applyFilters" :class="{fav: book.isFav}" @click="toggleFav(index)">
         <h3>
           {{book.title}}
         </h3>
@@ -66,6 +66,9 @@
       </li>
     </ul>
     <button @click="toggleShow">show/hide</button>
+    <button @click="toggleFavShow">toggle only favorites</button>
+    <button @click="toggleUnfavShow">toggle only non-favorites</button>
+    <button @click="showAll">show all books</button>
     <br>
     <div class="box" @mouseover="handleMouseEvent">mouseover</div>
     <div class="box" @mouseleave="handleMouseEvent">mouseleave</div>
